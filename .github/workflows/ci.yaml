@@ -1,0 +1,20 @@
+name: ci-wf
+on:
+ push:
+   branches:
+      - develop
+pull_request:
+    branches:
+       -develop
+jobs:
+ linting-jobs:
+   runs-on: ubuntu-latest
+   steps:
+     - name: "welcome message"
+       run: echo "welcome to CI pipeline"
+     - name: "clone the repository"  
+       uses: actions/checkout@v4
+     - name: Installing HTMLLinter
+       run: npm install --save-dev htmlhint
+     - name:  run html linter
+       run:  npx htmlhint "**/*.html"
