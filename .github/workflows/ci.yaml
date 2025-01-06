@@ -13,4 +13,4 @@ jobs:
      - name: "welcome message"
        run: echo "welcome to CI pipeline"
      - name: "clone the repository"  
-       uses: action/checkout@v4
+       uses: actions/checkout@v4
